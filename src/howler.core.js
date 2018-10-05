@@ -626,6 +626,7 @@
      * @return {Number}          Sound ID.
      */
     play: function(sprite, internal) {
+      var origSprite = sprite, origInternal=internal;
       var self = this;
       var id = null;
 
@@ -685,7 +686,7 @@
         self._queue.push({
           event: 'play',
           action: function() {
-            self.play(soundId);
+            self.play(origSprite, origInternal);
           }
         });
 
